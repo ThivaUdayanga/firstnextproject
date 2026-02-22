@@ -2,17 +2,17 @@ import React from 'react'
 
 type PageProps = {
   params : Promise<{
-    id : string;
+    meatid : string;
   }>
 }
 
 async function page({ params } : PageProps) {
 
-  const { id } = await params;
+  const { meatid } = await params;
   
   return (
     <div>
-      <h1>Meat Product Details {id}</h1>
+      <h1>Meat Product Details {meatid}</h1>
     </div>
   )
 }
