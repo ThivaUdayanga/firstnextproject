@@ -1,15 +1,18 @@
 import React from 'react'
 
 type PageProps = {
-    params : {
-        id : string;
-    }
+  params : Promise<{
+    id : string;
+  }>
 }
 
-function page({ params } : PageProps) {
+async function page({ params } : PageProps) {
+
+  const { id } = await params;
+  
   return (
     <div>
-      <h1>Meat Product Details {params.id}</h1>
+      <h1>Meat Product Details {id}</h1>
     </div>
   )
 }

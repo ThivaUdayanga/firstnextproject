@@ -1,15 +1,18 @@
 import React from 'react'
 
 type PageParams = {
-    params : {
+    params : Promise<{
         vegid : string;
-    }
+    }>
 }
 
-function page({ params } : PageParams) {
+async function page({ params } : PageParams) {
+
+  const { vegid } = await params;
+ 
   return (
     <div>
-      <h1>Vegis Product Details {params.vegid}</h1> 
+      <h1>Vegis Product Details {vegid}</h1> 
     </div>
   )
 }
